@@ -10,10 +10,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.siddharth.bookhub.*
-import com.siddharth.bookhub.fragments.AboutAppFragment
-import com.siddharth.bookhub.fragments.DashboardFragment
-import com.siddharth.bookhub.fragments.FavouriteFragment
-import com.siddharth.bookhub.fragments.ProfileFragment
+import com.siddharth.bookhub.fragments.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -71,6 +68,16 @@ class MainActivity : AppCompatActivity() {
 
                         .commit()
                     supportActionBar?.title="Favourite"
+                    drawerLayout.closeDrawers()
+                }
+
+
+                R.id.audioBooks -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.FrameLayout, AudioBookFragment())
+
+                        .commit()
+                    supportActionBar?.title="AudioBooks"
                     drawerLayout.closeDrawers()
                 }
 
